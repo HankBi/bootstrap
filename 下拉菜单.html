@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>表单补充</title>
+    <title>下拉菜单</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -13,19 +13,25 @@
 <body>
 <h1>hello world</h1>
 
-<div class="container">
-   <form class="form ">
-        <div class="form-group has-success has-feedback">
-            <label for="name">姓名</label>
-            <input class="form-control" type="text" id="name" placeholder="请输入用户名">
-            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+    <div class="container">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+            </ul>
         </div>
-       <div class="form-group has-error">
-           <label for="pass">密码</label>
-           <input class="form-control" type="password" id="pass" placeholder="请输入密码">
-       </div>
-   </form>
-</div>
+    </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="./js/jquery-2.1.4.min.js"></script>
