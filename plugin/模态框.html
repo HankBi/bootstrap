@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>动态模块框</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModel">
+            弹出模态框data属性
+        </button>
+        <button class="btn btn-danger" id="openModel">
+            弹出模态框JS
+        </button>
+        <button class="btn btn-danger" id="openModelMore">
+            弹出模态框JS加强
+        </button>
+        <div class="modal" role="dialog" id="myModel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <!--  <div class="modal-header">
+                        <h4 class="modal-title">模态框标题  <button class="close" data-dismiss="modal">&times;</button>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        this is body
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default">关闭</button>
+                        <button class="btn btn-default">保存修改</button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+       /* 整个页面加载完毕执行*/
+        $(function(){
+            $('#openModel').click(function(){
+                $('#myModel').modal('show');
+            });
+            $('#openModelMore').click(function(){
+                $('#myModel').modal({
+                    backdrop:'static',      //表示点击背景幕的时候，模态框不消失
+                    show:true,              //一上来就显示
+                    remote:'remote.html'    //表示将外部的内容加载进来
+                });
+            });
+            $('#myModel').on('show.bs.modal',function(){
+                //监听模块框即将打开的事件
+                alert('模块框即将展示');
+            })
+            $('#myModel').on('shown.bs.modal',function(){
+                //监听模块框即将结束的事件
+                alert('模块框即已经展示');
+            })
+            $('#myModel').on('hide.bs.modal',function(){
+                //监听模块框即将隐藏的事件
+                alert('模块框即将隐藏');
+            })
+            $('#myModel').on('hidden.bs.modal',function(){
+                //监听模块框即将结束隐藏的事件
+                alert('模块框即已经结束隐藏');
+            })
+
+        })
+    </script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

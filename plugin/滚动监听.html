@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>滚动监听</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <style>
+        #section1,#section2,#section3{
+            height: 728px;
+        }
+        #section1{
+            background: red;
+        }
+        #section2{
+            background: blue;
+        }
+        #section3{
+            background: yellow;
+        }
+        #nav{
+            position: fixed;
+            top:20px;
+        }
+    </style>
+</head>
+<body data-spy="scroll">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <nav >
+                    <ul class="nav nav-pills nav-stacked" id="nav">
+                        <li class="active"><a href="#section1">SECTION1</a></li>
+                        <li><a href="#section2">SECTION2</a></li>
+                        <li><a href="#section3">SECTION3</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <div id="section1">
+                    this is section !
+                </div>
+                <div id="section2">
+                    this is section !
+                </div>
+                <div id="section3">
+                    this is section !
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('body').scrollspy()
+    </script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
